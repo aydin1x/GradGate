@@ -420,6 +420,7 @@ grid-template-columns:1fr;
     <a href="se.html" class="active">Student Enrichment</a>
     <a href="ug.html">University Guidance</a>
     </nav>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>  
 </header>
 <section class="enrichment">
 
@@ -533,3 +534,12 @@ grid-template-columns:1fr;
   <p class="footer-tagline">Empowering students to build their dream careers.</p>
 
 </footer>
+  </script>
+<script>
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("show");
+}
+</script>
+</body>
+</html>  
+

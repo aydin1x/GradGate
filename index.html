@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GradGate</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f7f8fc;
+color:#111827;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 80px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:#6b7280;
+font-weight:600;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 80px;
+}
+
+.hero-left{
+max-width:550px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 16px;
+background:#eef2ff;
+color:#4f46e5;
+border-radius:999px;
+font-size:14px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.1;
+font-weight:800;
+}
+
+.gradient{
+background:linear-gradient(90deg,#4f46e5,#ec4899,#f97316);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:20px;
+font-size:18px;
+color:#6b7280;
+}
+
+.buttons{
+margin-top:35px;
+}
+
+.btn{
+padding:16px 28px;
+border-radius:12px;
+font-weight:600;
+border:none;
+cursor:pointer;
+font-size:16px;
+}
+
+.primary{
+background:#4f46e5;
+color:white;
+box-shadow:0 10px 25px rgba(79,70,229,0.3);
+}
+
+.secondary{
+margin-left:10px;
+background:white;
+border:1px solid #ddd;
+}
+
+.hero img{
+width:480px;
+border-radius:24px;
+}
+
+.stats{
+display:flex;
+gap:20px;
+margin-top:30px;
+}
+
+.stat{
+background:white;
+padding:15px 20px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+nav a.active {
+  color: blue;
+  font-weight: 600;
+}
+
+.section{
+padding:100px 80px;
+text-align:center;
+}
+
+.section h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.section p{
+color:#6b7280;
+}
+
+.cards{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 15px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.booking{
+max-width:700px;
+margin:50px auto;
+background:white;
+padding:40px;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+text-align:left;
+}
+
+.booking input,
+.booking select,
+.booking textarea{
+width:100%;
+padding:14px;
+margin-top:8px;
+margin-bottom:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#6b7280;
+}
+/* MOBILE RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 25px;
+  }
+
+  nav a {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  body {
+    padding-top: 100px;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero img {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .secondary {
+    margin-left: 0;
+  }
+
+  /* STATS */
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 60px 20px;
+  }
+
+  .section h2 {
+    font-size: 30px;
+  }
+
+  /* CARDS */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  /* BOOKING FORM */
+  .booking {
+    padding: 25px;
+    margin: 30px 15px;
+  }
+
+  .booking input,
+  .booking select,
+  .booking textarea {
+    font-size: 15px;
+  }
+  
+  .hero img {
+  width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 140px; /* adjust if header height changes */
+    scroll-behavior: smooth;
+  }
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <img src="https://i.imgur.com/CyZyMmp.png" alt="GradGate Logo" style="height:70px;">
+
+    <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="om.html">Our Mission</a>
+    <a href="careers.html">Careers</a>
+    <a href="se.html">Student Enrichment</a>
+    <a href="ug.html">University Guidance</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="badge">✨ AI-Powered Career Guidance</div>
+
+<h1>
+Your future,
+<span class="gradient">designed</span>
+by you.
+</h1>
+
+<p>
+Discover your ideal career path with personalized AI assessments,
+expert counselling, and curated resources built for graduates and students.
+</p>
+
+<div class="buttons">
+<button class="btn primary" onclick="document.getElementById('assessment').scrollIntoView()">Take Free Assessment</button>
+
+<button class="btn secondary" onclick="document.getElementById('booking').scrollIntoView()">Book Session</button>
+</div>
+
+<div class="stats">
+<div class="stat"><b>1,000+</b><br>Students guided</div>
+<div class="stat"><b>96%</b><br>Satisfaction</div>
+</div>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b">
+
+</section>
+
+<section class="section">
+
+<h2>Everything you need to launch your career</h2>
+<p>From self-discovery to landing your dream university acceptance letter.</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>AI Career Assessment</h3>
+<p>Discover careers aligned with your personality.</p>
+</div>
+
+<div class="card">
+<h3>Career Explorer</h3>
+<p>Browse salary data and career paths.</p>
+</div>
+
+<div class="card">
+<h3>1-on-1 Counselling</h3>
+<p>Personal sessions with experts.</p>
+</div>
+
+<div class="card">
+<h3>Resource Library</h3>
+<p>Resume and interview preparation guides.</p>
+</div>
+
+<div class="card">
+<h3>Goal Tracking</h3>
+<p>Track your career development journey.</p>
+</div>
+
+<div class="card">
+<h3>Community Support</h3>
+<p>Connect with peers and mentors.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="assessment">
+
+<h2>AI‑Powered Career Interest Assessment</h2>
+<p>Our AI analyzes your choices across multiple dimensions — interests, personality, environment preference, and problem‑solving style — to identify your ideal career sector.</p>
+
+<div class="booking">
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<p><strong>1. Which activity feels the most natural to you?</strong></p>
+<select name="q1" required>
+<option value="tech">Building or experimenting with digital tools</option>
+<option value="health">Helping people improve their wellbeing</option>
+<option value="business">Planning, organizing, or leading groups</option>
+<option value="creative">Designing visuals or expressing ideas creatively</option>
+</select>
+
+<!-- Q2 -->
+<p><strong>2. Which school subject do you connect with the most?</strong></p>
+<select name="q1" required>
+<option value="tech">Math, Physics, Computer Science</option>
+<option value="health">Biology, Chemistry, Psychology</option>
+<option value="business">Economics, Business Studies, Accounting</option>
+<option value="creative">Art, Media, Literature</option>
+</select>
+
+<!-- Q3 -->
+<p><strong>3. What type of work environment motivates you?</strong></p>
+<select name="q1" required>
+<option value="tech">Quiet digital spaces, labs, or coding environments</option>
+<option value="health">Hospitals, clinics, or community health settings</option>
+<option value="business">Corporate offices, startups, or management spaces</option>
+<option value="creative">Studios, design labs, or open creative spaces</option>
+</select>
+
+<!-- Q4 -->
+<p><strong>4. What kind of tasks do you enjoy the most?</strong></p>
+<select name="q1" required>
+<option value="tech">Debugging, analyzing data, building systems</option>
+<option value="health">Supporting people, solving human‑centered problems</option>
+<option value="business">Negotiating, planning, managing operations</option>
+<option value="creative">Drawing, editing, storytelling, designing</option>
+</select>
+
+<!-- Q5 -->
+<p><strong>5. How do you prefer to solve problems?</strong></p>
+<select name="q1" required>
+<option value="tech">Using logic, structure, and analytical thinking</option>
+<option value="health">Understanding emotions and human needs</option>
+<option value="business">Strategic thinking and decision‑making</option>
+<option value="creative">Thinking outside the box and experimenting</option>
+</select>
+
+<!-- Q6 -->
+<p><strong>6. Which statement describes you best?</strong></p>
+<select name="q1" required>
+<option value="tech">I enjoy figuring out how things work</option>
+<option value="health">I feel fulfilled when helping others</option>
+<option value="business">I naturally take charge in group situations</option>
+<option value="creative">I love expressing ideas visually or emotionally</option>
+</select>
+
+<!-- Q7 -->
+<p><strong>7. What motivates you the most?</strong></p>
+<select name="q1" required>
+<option value="tech">Innovation and building the future</option>
+<option value="health">Making a positive impact on people’s lives</option>
+<option value="business">Achieving goals and leading success</option>
+<option value="creative">Creating something unique and meaningful</option>
+</select>
+
+<!-- Q8 -->
+<p><strong>8. Which long‑term goal feels closest to your personality?</strong></p>
+<select name="q1" required>
+<option value="tech">Becoming an expert in a technical field</option>
+<option value="health">Improving health and wellbeing in society</option>
+<option value="business">Running a business or leading a team</option>
+<option value="creative">Mastering a creative craft or art form</option>
+</select>
+
+<button type="button" class="btn primary" onclick="calculateResult()">Analyze My Results</button>
+
+</form>
+
+<h3 id="result" style="margin-top:20px;"></h3>
+
+</div>
+</section>
+
+<section class="section" id="booking">
+
+<h2>Book a Counselling Session</h2>
+
+<div class="booking">
+
+<form action="https://formsubmit.co/gradgate.support@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<select name="topic" required>
+<option value="">Select Counselling Topic</option>
+<option>Career Planning</option>
+<option>University Guidance</option>
+<option>Job Preparation</option>
+</select>
+
+<textarea name="notes" placeholder="Additional Notes"></textarea>
+
+<!-- Calendly Embed -->
+<div class="calendly-inline-widget"
+     data-url="https://calendly.com/gradgate-support/30min"
+     style="min-width:320px;height:650px;">
+</div>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<button type="submit" class="btn primary">Book Session</button>
+
+</form>
+
+</div>
+</section>
+<footer class="site-footer">
+  <div class="footer-content">
+    <span class="footer-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+        <path d="M22 10v6"></path>
+        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+      </svg>
+    </span>
+
+    <span class="footer-title">GradGate © 2026
+</span>
+  </div>
+
+  <p class="footer-tagline">Empowering students to build their dream careers.</p>
+</footer>
+
+<script>
+function calculateResult() {
+    const form = document.getElementById("quizForm");
+    const answers = [...new FormData(form).values()];
+
+    if (answers.length < 8) {
+        document.getElementById("result").innerHTML = "⚠️ Please answer all questions before analyzing.";
+        return;
+    }
+
+    // Show AI loading animation
+    document.getElementById("result").innerHTML = `
+        <div style="padding:10px; font-size:18px;">
+            <strong>🤖 AI is analyzing your responses...</strong><br>
+            <span style="opacity:0.7;">Identifying patterns, strengths, and career alignment...</span>
+        </div>
+    `;
+
+    // Delay to simulate AI thinking
+    setTimeout(() => {
+        const score = { tech: 0, health: 0, business: 0, creative: 0 };
+        answers.forEach(a => score[a]++);
+
+        const top = Object.keys(score).reduce((a, b) => score[a] > score[b] ? a : b);
+
+        const responses = {
+            tech: `
+                <strong>🔍 AI Career Analysis Result: Technology Sector</strong><br><br>
+                Your responses show a strong alignment with analytical thinking, digital problem‑solving, and curiosity for how systems work.
+                <br><br>
+                <strong>Key Strengths Identified:</strong>
+                <ul>
+                    <li>Logical and structured thinking</li>
+                    <li>Interest in innovation and future technologies</li>
+                    <li>Comfort with digital tools and technical environments</li>
+                    <li>Ability to break down complex problems</li>
+                </ul>
+                <strong>Recommended Career Paths:</strong>
+                <ul>
+                    <li>Software Engineering</li>
+                    <li>Cybersecurity</li>
+                    <li>Artificial Intelligence & Machine Learning</li>
+                    <li>Data Science</li>
+                    <li>Cloud Engineering</li>
+                </ul>
+                <strong>AI Insight:</strong> You thrive in environments where you can build, analyze, and innovate. You are naturally suited for careers shaping the future of technology.
+            `,
+            health: `
+                <strong>🔍 AI Career Analysis Result: Healthcare Sector</strong><br><br>
+                Your answers highlight empathy, patience, and a strong desire to improve the wellbeing of others.
+                <br><br>
+                <strong>Key Strengths Identified:</strong>
+                <ul>
+                    <li>Compassion and emotional intelligence</li>
+                    <li>Interest in biology, health, and human behavior</li>
+                    <li>Ability to stay calm in stressful situations</li>
+                    <li>Strong sense of responsibility</li>
+                </ul>
+                <strong>Recommended Career Paths:</strong>
+                <ul>
+                    <li>Medicine</li>
+                    <li>Nursing</li>
+                    <li>Pharmacy</li>
+                    <li>Psychology</li>
+                    <li>Public Health</li>
+                </ul>
+                <strong>AI Insight:</strong> You are driven by purpose and impact. Healthcare careers match your personality and values extremely well.
+            `,
+            business: `
+                <strong>🔍 AI Career Analysis Result: Business Sector</strong><br><br>
+                Your responses show strong leadership potential, strategic thinking, and a natural ability to organize and manage.
+                <br><br>
+                <strong>Key Strengths Identified:</strong>
+                <ul>
+                    <li>Decision‑making and planning</li>
+                    <li>Confidence in leadership roles</li>
+                    <li>Interest in finance, management, or entrepreneurship</li>
+                    <li>Strong communication and negotiation skills</li>
+                </ul>
+                <strong>Recommended Career Paths:</strong>
+                <ul>
+                    <li>Business Management</li>
+                    <li>Marketing</li>
+                    <li>Finance & Accounting</li>
+                    <li>Entrepreneurship</li>
+                    <li>Human Resources</li>
+                </ul>
+                <strong>AI Insight:</strong> You are goal‑oriented and strategic. Business careers align with your strengths and long‑term ambitions.
+            `,
+            creative: `
+                <strong>🔍 AI Career Analysis Result: Creative Sector</strong><br><br>
+                Your answers reveal imagination, originality, and a passion for expressing ideas visually or emotionally.
+                <br><br>
+                <strong>Key Strengths Identified:</strong>
+                <ul>
+                    <li>Creativity and artistic expression</li>
+                    <li>Ability to think differently and innovate</li>
+                    <li>Strong visual or storytelling skills</li>
+                    <li>Comfort in flexible, open environments</li>
+                </ul>
+                <strong>Recommended Career Paths:</strong>
+                <ul>
+                    <li>Graphic Design</li>
+                    <li>Animation & Media Production</li>
+                    <li>UX/UI Design</li>
+                    <li>Content Creation</li>
+                    <li>Branding & Advertising</li>
+                </ul>
+                <strong>AI Insight:</strong> You excel in roles that require imagination and originality. Creative careers allow you to express your full potential.
+            `
+        };
+
+        document.getElementById("result").innerHTML = responses[top];
+
+    }, 1500); // AI thinking delay
+}
+</script>
+
+</body>
+</html>

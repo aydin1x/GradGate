@@ -20,6 +20,7 @@ font-family:'Inter',sans-serif;
 body{
 background:#f7f8fc;
 color:#111827;
+padding-top:120px; /* prevent header overlap */
 }
 
 header{
@@ -34,11 +35,19 @@ top:0;
 z-index:10;
 }
 
+/* DESKTOP NAV */
 nav a{
 margin-left:30px;
 text-decoration:none;
 color:#6b7280;
 font-weight:600;
+}
+
+/* HAMBURGER DEFAULT (HIDDEN ON DESKTOP) */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 .hero{
@@ -122,20 +131,21 @@ padding:15px 20px;
 border-radius:12px;
 box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
+
 nav a {
-  color: #333;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: color 0.2s ease;
+color: #333;
+text-decoration: none;
+padding: 8px 12px;
+transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: orange;
+color: orange;
 }
 
 nav a.active {
-  color: blue;
-  font-weight: 600;
+color: blue;
+font-weight: 600;
 }
 
 .section{
@@ -202,6 +212,7 @@ text-align:center;
 padding:40px;
 color:#6b7280;
 }
+
 /* STUDENT ENRICHMENT */
 
 .enrichment{
@@ -267,6 +278,7 @@ grid-template-columns:repeat(2,1fr);
 grid-template-columns:1fr;
 }
 }
+
 /* MOBILE RESPONSIVE DESIGN */
 @media (max-width: 768px) {
 
@@ -274,13 +286,36 @@ grid-template-columns:1fr;
     padding: 15px 25px;
   }
 
-  nav a {
-    margin-left: 15px;
-    font-size: 14px;
+  body {
+    padding-top: 80px;
   }
 
-  body {
-    padding-top: 100px;
+  /* SHOW HAMBURGER */
+  .menu-btn {
+    display: block;
+  }
+
+  /* MOBILE NAV DROPDOWN */
+  nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 16px;
   }
 
   /* HERO SECTION */
@@ -341,6 +376,20 @@ grid-template-columns:1fr;
 
   .card {
     padding: 25px;
+  }
+
+  /* ENRICHMENT MOBILE FIX */
+  .enrichment {
+    padding: 60px 20px;
+  }
+
+  .enrichment-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .enrichment-card {
+    padding: 28px;
   }
 
   /* BOOKING FORM */
@@ -482,4 +531,5 @@ grid-template-columns:1fr;
   </div>
 
   <p class="footer-tagline">Empowering students to build their dream careers.</p>
+
 </footer>

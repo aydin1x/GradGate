@@ -300,9 +300,47 @@ color:#6b7280;
     scroll-behavior: smooth;
   }
 }
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* smaller so no big gap */
+  }
+}
 
+@media (max-width: 768px) {
 
+  nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+  }
 
+  nav.show {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  /* hide desktop nav */
+  nav a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}
 </style>
 
 </head>
@@ -310,6 +348,7 @@ color:#6b7280;
 <body>
 
 <header>
+
     <img src="https://i.imgur.com/CyZyMmp.png" alt="GradGate Logo" style="height:70px;">
 
     <nav>
@@ -319,6 +358,7 @@ color:#6b7280;
     <a href="se.html">Student Enrichment</a>
     <a href="ug.html">University Guidance</a>
     </nav>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </header>
 
 <section class="hero">
@@ -652,6 +692,11 @@ function calculateResult() {
         document.getElementById("result").innerHTML = responses[top];
 
     }, 1500); // AI thinking delay
+}
+</script>
+<script>
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("show");
 }
 </script>
 
